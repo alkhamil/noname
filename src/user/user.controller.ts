@@ -3,12 +3,10 @@ import { ApiBadRequestResponse, ApiBody, ApiOkResponse, ApiParam, ApiQuery, ApiT
 import { User, UserPagination, UserPaginationDto } from './user.entity';
 import { UserService } from './user.service';
 
-@Controller('api/user')
 @ApiTags('User')
+@Controller('api/user')
 export class UserController {
-    constructor(
-        private userService: UserService
-    ) {}
+    constructor(private userService: UserService) {}
 
     @Get('/')
     @ApiQuery({name: 'page'})
